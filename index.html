@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SISTEM E-FAIL 2.0</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+<!-- APP SHELL: SIDEBAR, TOPBAR, CONTENT AND FOOTER -->
+<div class="app">
+  <!-- GLOBAL NAVIGATION: SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+    <div class="sidebar__brand">
+      <div class="sidebar__crest">
+    <img src="logo.jpg" alt="Logo Jabatan Perdana Menteri">
+</div>
+      <div class="sidebar__brand-name">Jabatan Perdana Menteri</div>
+      <div class="sidebar__brand-sub">(PAJPM)</div>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="sidebar__link sidebar__link--active" href="#dashboard" data-page="dashboard"><span class="sidebar__icon"><i class="bi bi-grid-1x2"></i></span>Dashboard</a>
+      <div class="sidebar__group">
+    <a class="sidebar__link" href="#pengguna" data-page="pengguna">
+        <span class="sidebar__icon"><i class="bi bi-people"></i></span>
+        Pengurusan Pengguna
+        <span class="sidebar__arrow">⌄</span>
+    </a>
+
+    <div class="sidebar__submenu">
+        <a class="sidebar__sublink" href="#tambah-pengguna" data-page="tambah-pengguna">
+            Tambah Pengguna
+        </a>
+
+         <a class="sidebar__sublink" href="#tetapan-pengguna" data-page="tetapan-pengguna">
+            Tetapan Pengguna
+        </a>
+    </div>
+</div>
+
+<!-- FAIL UMUM -->
+<div class="sidebar__group">
+
+    <a class="sidebar__link" href="javascript:void(0)">
+        <span class="sidebar__icon"><i class="bi bi-folder"></i></span>
+        Fail Umum
+        <span class="sidebar__arrow">⌄</span>
+    </a>
+
+    <div class="sidebar__submenu sidebar__submenu--level1">
+
+        <!-- PERMOHONAN -->
+        <div class="sidebar__group">
+
+            <a class="sidebar__sublink" href="javascript:void(0)">
+                Permohonan
+                <span class="sidebar__arrow">⌄</span>
+            </a>
+
+            <div class="sidebar__submenu">
+                <a class="sidebar__sublink" href="#bukafailumum" data-page="buka-umum">
+                    Pembukaan Fail Umum
+                </a>
+
+                <a class="sidebar__sublink" href="#jilidbaru" data-page="jilid-baru">
+                    Pembukaan Jilid Baharu
+                </a>
+
+                <a class="sidebar__sublink" href="#naiktaraf" data-page="naik-taraf">
+                    Naik Taraf
+                </a>
+            </div>
+
+        </div>
+
+        <!-- PINJAMAN -->
+        <a class="sidebar__sublink" href="#permohonan" data-page="permohonan">
+            Pinjaman
+        </a>
+
+        <!-- PEMULANGAN -->
+        <a class="sidebar__sublink" href="#pergerakan" data-page="pergerakan">
+            Pemulangan
+        </a>
+
+    </div>
+</div>
+
+<!-- FAIL PERIBADI -->
+<div class="sidebar__group">
+
+    <a class="sidebar__link" href="javascript:void(0)">
+        <span class="sidebar__icon"><i class="bi bi-person-video2"></i></span>
+        Fail Peribadi
+        <span class="sidebar__arrow">⌄</span>
+    </a>
+
+    <div class="sidebar__submenu sidebar__submenu--level1">
+
+        <!-- PERMOHONAN -->
+        <div class="sidebar__group">
+
+            <a class="sidebar__sublink" href="javascript:void(0)">
+                Permohonan
+                <span class="sidebar__arrow">⌄</span>
+            </a>
+
+            <div class="sidebar__submenu">
+                <a class="sidebar__sublink" href="#bukafailperibadi" data-page="buka-peribadi">
+                    Pembukaan Fail Peribadi
+                </a>
+
+                <a class="sidebar__sublink" href="#jilidbarup" data-page="jilid-barup">
+                    Pembukaan Jilid Baharu
+                </a>
+
+                <a class="sidebar__sublink" href="#naiktarafp" data-page="naik-tarafp">
+                    Naik Taraf
+                </a>
+            </div>
+
+        </div>
+
+        <!-- PINJAMAN -->
+        <a class="sidebar__sublink" href="#permohonanp" data-page="permohonanp">
+            Pinjaman
+        </a>
+
+        <!-- PEMULANGAN -->
+        <a class="sidebar__sublink" href="#pergerakanp" data-page="pergerakanp">
+            Pemulangan
+        </a>
+
+    </div>
+</div>
+
+<!-- MAIN MODULE: PUSAT REKOD -->
+<div class="sidebar__group">
+    <a class="sidebar__link" href="#">
+        <span class="sidebar__icon"><i class="bi bi-archive"></i></span>
+        Pusat Rekod
+        <span class="sidebar__arrow">⌄</span>
+    </a>
+
+    <div class="sidebar__submenu sidebar__submenu--level1">
+        <a class="sidebar__sublink" href="#pelupusan" data-page="pelupusan">
+            <span class="sidebar__icon"><i class="bi bi-trash3"></i></span>
+            Pelupusan
+        </a>
+
+        <a class="sidebar__sublink" href="#pemindahan" data-page="pemindahan">
+            <span class="sidebar__icon"><i class="bi bi-box-arrow-right"></i></span>
+            Pemindahan
+        </a>
+    </div>
+</div>
+      <a class="sidebar__link" href="#pengesahan" data-page="pengesahan"><span class="sidebar__icon"><i class="bi bi-clipboard2-check"></i></span>Pengesahan Permohonan</a>
+      <a class="sidebar__link" href="#sejarah" data-page="sejarah"><span class="sidebar__icon"><i class="bi bi-clock-history"></i></span>Sejarah Permohonan</a>
+      <a class="sidebar__link" href="#laporan" data-page="laporan"><span class="sidebar__icon"><i class="bi bi-file-earmark-bar-graph"></i></span>Laporan</a>
+      <div class="sidebar__divider"></div>
+      <a class="sidebar__link" href="#profil" data-page="profil"><span class="sidebar__icon"><i class="bi bi-person-rolodex"></i></span>Profil Pengguna</a>
+      <a class="sidebar__link" href="#tetapan" data-page="tetapan"><span class="sidebar__icon"><i class="bi bi-gear-fill"></i></span>Tetapan</a>
+      <a class="sidebar__link" href="#keluar" data-page="keluar"><span class="sidebar__icon"><i class="bi bi-power"></i></span>Log Keluar</a>
+    </nav>
+    <div class="sidebar__bottom"><div class="sidebar__status">Sistem beroperasi</div>e-FAIL 2.0 · Versi 2.0.1</div>
+  </aside>
+  <div class="workspace">
+    <!-- GLOBAL HEADER: TOPBAR -->
+    <header class="topbar">
+      <button class="topbar__hamburger" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="sidebar">☰</button>
+      <div class="topbar__identity">
+       <div class="topbar__logo">
+    <img src="logo.jpg" alt="Logo JPM">
+</div>
+        <div><div class="topbar__title">SISTEM E-FAIL 2.0</div><div class="topbar__subtitle">Pengurusan Rekod PAJPM | Pentadbiran Am, JPM</div></div>
+      </div>
+      <div class="topbar__right">
+        <div class="demo-role-control">
+          <label for="demoRoleSelect"><i class="bi bi-shield-lock"></i> Uji peranan</label>
+          <select id="demoRoleSelect" aria-label="Pilih peranan untuk ujian">
+            <option value="Pentadbir">Pentadbir</option>
+            <option value="Penyelaras">Penyelaras</option>
+            <option value="Pengguna">Pengguna</option>
+          </select>
+          <span class="demo-role-tag">MOD UJIAN</span>
+        </div>
+        
+
+<div class="notification-wrapper"
+     onmouseenter="showNotifications()"
+     onmouseleave="hideNotifications()">
+
+    <!-- Notification Button -->
+    <button class="notification-btn" id="notificationBtn">
+        <i class="bi bi-bell"></i>
+        <span class="notification-badge" id="notificationBadge">0</span>
+    </button>
+
+    <!-- Notification Dropdown -->
+    <div class="notification-dropdown" id="notificationDropdown">
+
+        <!-- Header -->
+        <div class="notification-header">
+            <strong>Notifikasi & Tindakan</strong>
+            <span id="notificationCount">0 Baru</span>
+        </div>
+
+        <!-- Notification List: JavaScript fills this -->
+        <div class="notification-list" id="notificationList">
+        </div>
+
+        <!-- Footer -->
+        <div class="notification-footer">
+            <span>Semua Notifikasi</span>
+        </div>
+
+   
+</div>
+
+</div>
+
+ <div class="topbar__date">
+    <span class="topbar__date-icon">
+        <i class="bi bi-clock-fill"></i>
+    </span>
+
+    <span>
+        <strong id="liveDate">Loading date...</strong>
+        <small id="liveTime">Loading time...</small>
+    </span>
+</div>
+
+<div class="topbar__separator"></div>
+
+<div class="topbar__user-group">
+        
+
+    <div class="topbar__user">
+
+        <div class="topbar__avatar">NS</div>
+
+        <div class="topbar__user-name">
+            Nur Syazwana
+            <div class="topbar__user-role">SPR · Pentadbir</div>
+        </div>
+
+        <span class="topbar__chevron">⌄</span>
+
+    </div>
+
+    <div class="topbar__dropdown">
+
+        <a href="#profil" data-page="profil">
+            <span><i class="bi bi-person-vcard-fill"></i></span> Profil Pengguna
+        </a>
+
+        <a href="#tetapan" data-page="tetapan">
+            <span><i class="bi bi-gear-fill"></i></span> Tetapan
+        </a>
+
+        <div class="topbar__dropdown-divider"></div>
+
+        <a href="#keluar" data-page="keluar">
+            <span><i class="bi bi-box-arrow-right"></i></span> Log Keluar
+        </a>
+
+    </div>
+
+</div>
+      </div>
+    </header>
+    <!-- MAIN CONTENT: SYSTEM MODULES -->
+    <main class="main">
+      <!-- MODULE: DASHBOARD -->
+<section class="page page--active" id="page-dashboard" aria-labelledby="dashboard-title">
+        <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-file-ruled-fill"></i></div><div><h1 class="page-heading__title" id="dashboard-title">Dashboard Utama</h1><div class="page-heading__subtitle">Ringkasan keseluruhan pengurusan fail PAJPM</div></div></div><button type="button" class="btn btn-danger"
+    onclick="resetSemuaDataDemo()">
+    <i class="bi bi-trash"></i> Reset Demo Data
+</button></div>
+        <div class="stats">
+          <article class="stat"><div class="stat__icon"><i class="bi bi-archive-fill"></i></div><div><div class="stat__number">1,250</div><div class="stat__label">Jumlah Fail Aktif</div><div class="stat__hint">Fail dalam penggunaan</div></div></article>
+          <article class="stat"><div class="stat__icon stat__icon--orange"><i class="bi bi-bookmark-fill"></i></div><div><div class="stat__number">850</div><div class="stat__label">Fail Tidak Aktif</div><div class="stat__hint">Dalam tempoh simpanan</div></div></article>
+          <article class="stat"><div class="stat__icon"><i class="bi bi-card-list"></i></div><div><div class="stat__number">32</div><div class="stat__label">Pinjaman Belum Selesai</div><div class="stat__hint">Perlu pemantauan</div></div></article>
+          <article class="stat"><div class="stat__icon stat__icon--red"><i class="bi bi-bank"></i></div><div><div class="stat__number">45</div><div class="stat__label">Fail Tindakan Pelupusan</div><div class="stat__hint">Semakan tahun 2026</div></div></article>
+        </div>
+        <div class="dashboard-grid">
+          <div class="dashboard-left">
+            <section class="warning"><div class="warning__title"><span>⚠</span> Peringatan dan Tindakan</div><div class="warning__line"><span class="pill pill--orange">Perhatian</span>45 fail telah atau hampir mencapai tempoh tindakan pelupusan. <b style="color:#bd6a00">›</b></div><div class="warning__line"><span class="pill">Makluman</span>32 permohonan pinjaman fail masih belum selesai.</div></section>
+            <section class="panel">
+              <div class="panel__header">
+                <div class="panel__title"><span class="panel__title-icon">▥</span>Ringkasan Mengikut Bahagian</div>
+                <span class="muted" id="dashboardFileCount">Memuatkan rekod...</span>
+              </div>
+              <div style="padding:12px 17px 10px">
+                <input type="search" id="dashboardFileSearch" class="form-control" placeholder="Cari No. Fail, tajuk, bahagian, jilid atau status..." aria-label="Cari rekod fail">
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>BAHAGIAN</th><th>JILID</th><th>STATUS JILID</th><th>STATUS PINJAMAN</th></tr></thead>
+                  <tbody id="dashboardFileTableBody">
+                    <tr><td colspan="6" class="muted">Memuatkan rekod fail...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="panel__foot">Paparan semua fail dan jilid. Klik rekod untuk melihat Audit Trail.</div>
+            </section>
+          </div>
+          <section class="panel activity"><div class="panel__header"><div class="panel__title"><span class="panel__title-icon">◴</span>Aktiviti Terkini</div><a class="text-link" href="#pergerakan" data-page="pergerakan">Lihat Semua　➜</a></div>
+            <div class="activity__item"><div class="activity__icon">↗</div><div><div class="activity__date">03 Nov 2026 <span class="activity__time">09:45 pagi</span></div><div class="activity__code">JPM.100-1/1/1</div><div class="activity__desc">Dipinjam oleh Bahagian Pengurusan</div><span class="pill">Dipinjam</span></div></div>
+            <div class="activity__item"><div class="activity__icon activity__icon--green">↙</div><div><div class="activity__date">02 Nov 2026 <span class="activity__time">03:20 petang</span></div><div class="activity__code">JPM.100-2/3/1</div><div class="activity__desc">Fail telah dikembalikan kepada SPR</div><span class="pill pill--green">Dipulangkan</span></div></div>
+            <div class="activity__item"><div class="activity__icon">⊞</div><div><div class="activity__date">01 Nov 2026 <span class="activity__time">11:10 pagi</span></div><div class="activity__code">JPM.100-5/1/1</div><div class="activity__desc">Pembukaan fail baharu direkodkan</div><span class="pill">Fail baharu</span></div></div>
+          </section>
+        </div>
+      </section>
+
+      <!-- MODULE: PENGURUSAN PENGGUNA -->
+<section class="page" id="page-pengguna">
+        <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-person-vcard-fill"></i></div><div><h1 class="page-heading__title">Senarai Pengguna</h1><div class="page-heading__subtitle">Pengurusan maklumat pengguna sistem</div></div></div><button class="button"data-go="tambah-pengguna"><i class="bi bi-person-add"></i> Pengguna</button></div>
+        <section class="panel"><div class="panel__header"><div class="panel__title"><i class="bi bi-person-vcard-fill"></i>　Senarai Penguna Berdaftar</div><span class="pill" id="jumlahPengguna">0 Pengguna</span></div><div class="table-wrap"><table class="data-table"><thead><tr><th>NAMA PENGUNA</th><th>JAWATAN</th><th>BAHAGIAN</th><th>PERANAN</th><th>STATUS</th><th>TINDAKAN</th></tr></thead><tbody id="senaraiPenggunaBody"></tbody></table></div></section>
+      </section>
+      
+<!-- TAMBAH PENGGUNA -->
+<!-- MODULE: TAMBAH PENGGUNA -->
+<section class="page" id="page-tambah-pengguna"><div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-person-plus-fill"></i></div><div><h1 class="page-heading__title">Tambah Pengguna</h1><div class="page-heading__subtitle">Pendaftaran pengguna baharu ke dalam sistem E-FAIL 2.0</div></div></div></div><section class="panel form-panel"><div class="form-panel__title">Maklumat Pengguna</div><div class="form-panel__desc">Lengkapkan maklumat pengguna baharu.</div><form id="formTambahPengguna" class="field-grid"><div class="field"><label>Nama Penuh *</label><input id="penggunaNama" type="text" required placeholder="Masukkan nama penuh"></div><div class="field"><label>No. Kad Pengenalan *</label><input id="penggunaNoKP" type="text" required placeholder="Contoh: 900101-01-1234"></div><div class="field"><label>Emel Rasmi *</label><input id="penggunaEmel" type="email" required placeholder="nama@jpm.gov.my"></div><div class="field"><label>Jawatan</label><input id="penggunaJawatan" type="text" placeholder="Masukkan jawatan"></div><div class="field"><label>No. Telefon</label><input id="penggunaTelefon" type="tel" placeholder="Masukkan nombor telefon"></div><div class="field"><label>Bahagian / Seksyen *</label><select id="penggunaBahagian" required><option value="">Pilih Bahagian</option><option>SPR</option><option>BSM</option><option>BKP</option><option>BTM</option></select></div><div class="field"><label>Peranan Pengguna *</label><select id="penggunaPeranan" required><option value="">Pilih Peranan</option><option>Penyelaras</option><option>Pentadbir</option><option>Pengguna</option></select></div><div class="field field--full"><label>Status Pengguna</label><select id="penggunaStatus"><option>Aktif</option><option>Tidak Aktif</option></select></div><div class="form-actions"><button type="reset" class="button button--light">Batal</button><button type="submit" class="button">＋ Daftar Pengguna</button></div></form></section></section>
+
+<!-- MODULE: TETAPAN PENGGUNA -->
+<section class="page" id="page-tetapan-pengguna"><div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon">⚙</div><div><h1 class="page-heading__title">Tetapan Pengguna</h1><div class="page-heading__subtitle">Pengurusan konfigurasi dan tetapan akaun pengguna</div></div></div></div><section class="panel form-panel"><div class="form-panel__title">Tetapan Akaun Pengguna</div><div class="form-panel__desc">Konfigurasi tetapan pengguna sistem.</div><div class="field-grid"><div class="field"><label>Tempoh Sesi Pengguna</label> <select><option>15 Minit</option><option>30 Minit</option><option>60 Minit</option></select></div><div class="field"><label>Status Akaun Lalai</label> <select><option>Aktif</option><option>Tidak Aktif</option></select></div><div class="field"><label>Had Percubaan Log Masuk</label> <input type="number" value="5"></div><div class="field"><label>Tempoh Kunci Akaun (Minit)</label> <input type="number" value="15"></div></div><div class="form-actions"><button class="button button--light">Tetapkan Semula</button> <button class="button">Simpan Tetapan</button></div></section></section>
+
+</section>
+      <!-- MODULE: PROFIL PENGGUNA -->
+<section class="page" id="page-profil">
+        <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon">♙</div><div><h1 class="page-heading__title">Profil Pengguna</h1><div class="page-heading__subtitle">Maklumat Pengguna</div></div></div></div>
+        <section class="profile-card"><div class="profile-card__cover"></div><div class="profile-card__body"><div class="profile-card__photo" role="img" aria-label="Gambar profil pengguna" style="display:inline-grid;place-items:center;color:#607b9d;font-size:24px">NS</div><div class="profile-card__name">MUHAMMAD HAKIM BIN YUSNIZAM</div><span class="pill">Pentadbir</span><div class="profile-badges"><div class="profile-badge">🏅<strong>Pengguna Berdaftar</strong></div><div class="profile-badge">▣<strong>SPR</strong></div><div class="profile-badge">▦<strong>Aktif</strong></div></div><div class="profile-card__meta">Jabatan Perdana Menteri<br>Bahagian Pentadbiran Am</div></div><div class="profile-card__details"><h3>PERTANTANGAN</h3><p>Jabatan Perdana Menteri<br>Maklumat pengguna dan pengesahan akaun<br>✓ Akaun pengguna telah disahkan</p></div></section>
+      </section>
+
+     <!-- MODULE: NAIK TARAF -->
+
+<!-- MODULE: PENGEMASKINIAN FAIL UMUM -->
+<section class="page" id="page-naik-taraf">
+    <div class="page-heading">
+        <div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-file-earmark-plus-fill"></i></div><div><h1 class="page-heading__title">Pengemaskinian Fail - Fail Umum</h1><div class="page-heading__subtitle">Cari dan pilih fail umum untuk pengemaskinian</div></div></div>
+        <button class="button button--light" data-go="laporan">☷ Senarai Fail</button>
+    </div>
+
+    <div class="jp-table-card">
+        <div class="jp-table-toolbar">
+            <div class="jp-search"><i class="bi bi-search"></i><input type="search" id="carianNaikTarafUmum" placeholder="Cari no. fail, tajuk atau lokasi..."></div>
+            <select id="filterBahagianNaikTarafUmum" class="jp-filter"><option value="">Semua Bahagian</option><option value="SPR">SPR</option><option value="BSM">BSM</option></select>
+        </div>
+        <div class="jp-table-wrapper">
+            <table class="jp-table">
+                <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>PERINGKAT</th><th>LOKASI</th><th>JILID</th><th>TINDAKAN</th></tr></thead>
+                <tbody id="senaraiNaikTarafUmum"></tbody>
+            </table>
+            <div id="naikTarafUmumKosong" class="jp-empty" hidden>Taip untuk mencari rekod</div>
+        </div>
+        <div class="jp-table-footer"><span id="jumlahNaikTarafUmum">0 rekod</span><span>Senarai Fail Umum</span></div>
+    </div>
+</section>
+
+<!-- POPUP: PENGEMASKINIAN FAIL UMUM -->
+<dialog id="modalNaikTarafUmum" class="jp-modal">
+    <div class="jp-modal__header">
+        <div><h2>Borang Pengemaskinian Fail</h2><p id="naikTarafJenisFailUmum">Maklumat fail yang dipilih</p></div>
+        <button type="button" class="jp-modal__close" data-close-naik-taraf="umum" aria-label="Tutup">&times;</button>
+    </div>
+    <form id="formPembukaan">
+        <div class="jp-modal__body">
+            <div class="jp-form-section">
+                <h3>Maklumat Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>No. Fail</label><input id="naikTarafNoFailUmum" readonly></div>
+                    <div class="field"><label>Jilid</label><input id="naikTarafJilidUmum" readonly></div>
+                    <div class="field field--full"><label>Tajuk Fail *</label><input id="naikTarafTajukUmum" required></div>
+                    <div class="field"><label>Taraf Fail</label><select id="naikTarafPeringkatUmum"><option>Terbuka</option><option>Terhad</option><option>Sulit</option><option>Rahsia</option><option>Rahsia Besar</option></select></div>
+                    <div class="field"><label>Kategori Fail</label><input id="naikTarafKategoriUmum" value="Fail Umum" readonly></div>
+                    <div class="field field--full"><label>Lokasi Fail</label><input id="naikTarafLokasiUmum"></div>
+                    <div class="field field--full"><label>Keterangan Fail</label><textarea id="naikTarafKeteranganUmum" rows="2"></textarea></div>
+                </div>
+            </div>
+            <div class="jp-form-section">
+                <h3>Maklumat Pemohon</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>Nama Pegawai</label><input id="naikTarafNamaUmum" readonly></div>
+                    <div class="field"><label>Bahagian / Seksyen</label><input id="naikTarafBahagianUmum" readonly></div>
+                </div>
+            </div>
+            <div class="jp-form-section">
+                <h3>Maklumat Pengemaskinian</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>Tarikh Pengemaskinian *</label><input type="date" id="naikTarafTarikhUmum" required></div>
+                    <div class="field field--full"><label>Catatan</label><textarea id="naikTarafCatatanUmum" rows="2" placeholder="Catatan tambahan (jika ada)"></textarea></div>
+                </div>
+            </div>
+            <input type="hidden" id="naikTarafFailIdUmum">
+        </div>
+        <div class="jp-modal__footer">
+            <button type="button" class="button button--light" data-close-naik-taraf="umum">Batal</button>
+            <button type="submit" class="button">Hantar Permohonan</button>
+        </div>
+    </form>
+</dialog>
+
+
+
+<!-- MODULE: PENGEMASKINIAN FAIL PERIBADI -->
+<section class="page" id="page-naik-tarafp">
+    <div class="page-heading">
+        <div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-file-earmark-plus-fill"></i></div><div><h1 class="page-heading__title">Pengemaskinian Fail - Fail Peribadi</h1><div class="page-heading__subtitle">Cari dan pilih fail peribadi untuk pengemaskinian</div></div></div>
+        <button class="button button--light" data-go="laporan">☷ Senarai Fail</button>
+    </div>
+
+    <div class="jp-table-card">
+        <div class="jp-table-toolbar">
+            <div class="jp-search"><i class="bi bi-search"></i><input type="search" id="carianNaikTarafPeribadi" placeholder="Cari no. fail, tajuk atau lokasi..."></div>
+            <select id="filterBahagianNaikTarafPeribadi" class="jp-filter"><option value="">Semua Bahagian</option><option value="SPR">SPR</option><option value="BSM">BSM</option></select>
+        </div>
+        <div class="jp-table-wrapper">
+            <table class="jp-table">
+                <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>PERINGKAT</th><th>KETERANGAN FAIL</th><th>JILID</th><th>TINDAKAN</th></tr></thead>
+                <tbody id="senaraiNaikTarafPeribadi"></tbody>
+            </table>
+            <div id="naikTarafPeribadiKosong" class="jp-empty" hidden>Taip untuk mencari rekod</div>
+        </div>
+        <div class="jp-table-footer"><span id="jumlahNaikTarafPeribadi">0 rekod</span><span>Senarai Fail Peribadi</span></div>
+    </div>
+</section>
+
+<!-- POPUP: PENGEMASKINIAN FAIL PERIBADI -->
+<dialog id="modalNaikTarafPeribadi" class="jp-modal">
+    <div class="jp-modal__header">
+        <div><h2>Borang Pengemaskinian Fail</h2><p id="naikTarafJenisFailPeribadi">Maklumat fail yang dipilih</p></div>
+        <button type="button" class="jp-modal__close" data-close-naik-taraf="peribadi" aria-label="Tutup">&times;</button>
+    </div>
+    <form id="formPembukaanPeribadi">
+        <div class="jp-modal__body">
+            <div class="jp-form-section">
+                <h3>Maklumat Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>No. Fail</label><input id="naikTarafNoFailPeribadi" readonly></div>
+                    <div class="field"><label>Jilid</label><input id="naikTarafJilidPeribadi" readonly></div>
+                    <div class="field field--full"><label>Tajuk Fail *</label><input id="naikTarafTajukPeribadi" required></div>
+                    <div class="field"><label>Taraf Fail</label><select id="naikTarafPeringkatPeribadi"><option>Terbuka</option><option>Terhad</option><option>Sulit</option><option>Rahsia</option><option>Rahsia Besar</option></select></div>
+                    <div class="field"><label>Kategori Fail</label><input id="naikTarafKategoriPeribadi" value="Fail Peribadi" readonly></div>
+                    <div class="field field--full"><label>Lokasi Fail</label><input id="naikTarafLokasiPeribadi"></div>
+                    <div class="field field--full"><label>Keterangan Fail</label><textarea id="naikTarafKeteranganPeribadi" rows="2"></textarea></div>
+                </div>
+            </div>
+            <div class="jp-form-section">
+                <h3>Maklumat Pemohon</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>Nama Pegawai</label><input id="naikTarafNamaPeribadi" readonly></div>
+                    <div class="field"><label>Bahagian / Seksyen</label><input id="naikTarafBahagianPeribadi" readonly></div>
+                </div>
+            </div>
+            <div class="jp-form-section">
+                <h3>Maklumat Pengemaskinian</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>Tarikh Pengemaskinian *</label><input type="date" id="naikTarafTarikhPeribadi" required></div>
+                    <div class="field field--full"><label>Catatan</label><textarea id="naikTarafCatatanPeribadi" rows="2" placeholder="Catatan tambahan (jika ada)"></textarea></div>
+                </div>
+            </div>
+            <input type="hidden" id="naikTarafFailIdPeribadi">
+        </div>
+        <div class="jp-modal__footer">
+            <button type="button" class="button button--light" data-close-naik-taraf="peribadi">Batal</button>
+            <button type="submit" class="button">Hantar Permohonan</button>
+        </div>
+    </form>
+</dialog>
+
+
+      <!-- MODULE: PEMBUKAAN FAIL UMUM -->
+<section class="page" id="page-buka-umum">
+        <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-file-earmark-plus-fill"></i></div><div><h1 class="page-heading__title">Modul Pembukaan Fail Umum</h1><div class="page-heading__subtitle">Pembukaan fail baharu dalam sistem</div></div></div><button class="button button--light"data-go="laporan">☷ Senarai Fail</button></div>
+        <div class="content-columns"><section class="panel form-panel"><div class="form-panel__title"><i class="bi bi-file-earmark-plus-fill"></i>Borang Pembukaan Fail</div><div class="form-panel__desc">Lengkapkan maklumat fail untuk pendaftaran baharu.</div><form class="field-grid" id="formPendaftaran"><div class="field field--full"><label>Maklumat Pemohon *</label><input placeholder="" required></div><div class="field"><label>Bahagian / Seksyen *</label><select><option>Pilih Bahagian / Seksyen</option><option>SPR - Seksyen Pengurusan Rekod</option><option>BSM - Bahagian Sumber Manusia</option></select></div><div class="field"><label>Tarikh Permohonan *</label><input type="date" value="2026-11-03"></div><div class="field field--full"><label>Maklumat Pemohon *</label><input placeholder="" required></div><div class="field"><label>Peringkat Fail *</label><select><option>Terbuka</option><option>Terhad</option><option>Sulit</option><option>Rahsia</option><option>Rahsia Besar</option></select></div><div class="field field--full"><label>Tajuk Fail *</label><input placeholder="Masukkan tajuk fail"required></div><div class="field"><label>Lokasi Penyimpanan Fail *</label><select><option>Pilih Bahagian / Seksyen</option><option>SPR - Seksyen Pengurusan Rekod</option><option>BSM - Bahagian Sumber Manusia</option></select></div><div class="field field--full"><label>Keterangan Lokasi Fail</label><input placeholder="Keterangan Lokasi Fail (jika ada)"></div></form><div class="form-actions">
+
+    <button
+        type="reset"
+        form="formPendaftaran"
+        class="button button--light">
+        Batal
+    </button>
+
+    <button
+        type="button"
+        class="button"
+        onclick="hantarPermohonanPendaftaran()">
+        Mohon
+    </button>
+
+</div></section><aside class="guide"><div class="guide__title">▣　Panduan Pengguna</div><p>Pastikan maklumat fail diisi dengan lengkap dan tepat sebelum menyimpan pendaftaran. Rujukan fail hendaklah mengikut format yang ditetapkan.</p></aside></div>
+      </section>  
+
+      <!-- MODULE: PEMBUKAAN FAIL PERIBADI -->
+<section class="page" id="page-buka-peribadi">
+        <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-file-earmark-plus-fill"></i></div><div><h1 class="page-heading__title">Modul Pembukaan Fail</h1><div class="page-heading__subtitle">Pembukaan fail baharu dalam sistem</div></div></div><button class="button button--light"data-go="laporan">☷ Senarai Fail</button></div>
+        <div class="content-columns"><section class="panel form-panel"><div class="form-panel__title"><i class="bi bi-file-earmark-plus-fill"></i>Borang Pembukaan Fail</div><div class="form-panel__desc">Lengkapkan maklumat fail untuk pendaftaran baharu.</div><form class="field-grid" id="formPendaftaranPeribadi"><div class="field field--full"><label>Maklumat Pemohon *</label><input placeholder="" required></div><div class="field"><label>Bahagian / Seksyen *</label><select><option>Pilih Bahagian / Seksyen</option><option>SPR - Seksyen Pengurusan Rekod</option><option>BSM - Bahagian Sumber Manusia</option></select></div><div class="field"><label>Tarikh Permohonan *</label><input type="date" value="2026-11-03"></div><div class="field"><label>Peringkat Fail *</label><select><option>Terbuka</option><option>Terhad</option><option>Sulit</option><option>Rahsia</option><option>Rahsia Besar</option></select></div><div class="field field--full"><label>Tajuk Fail *</label><input placeholder="Masukkan tajuk fail"required></div><div class="field field--full"><label>No IC *</label><input placeholder="" required></div><div class="field field--full"><label>Maklumat Fail *</label><input placeholder="" required></div><div class="field"><label>Jawatan *</label><select><option>Jawatan Semasa</option><option>Tetap/Interim</option><option>Kontrak</option></select></div><div class="field"><label>Lokasi Penyimpanan Fail *</label><select><option>Pilih Bahagian / Seksyen</option><option>SPR - Seksyen Pengurusan Rekod</option><option>BSM - Bahagian Sumber Manusia</option></select></div><div class="field field--full"><label>Keterangan Lokasi Fail</label><input placeholder="Keterangan Lokasi Fail (jika ada)"></div><div class="field field--full"><label>Catatan</label><input placeholder="Catatan (jika ada)"></div></form><div class="form-actions">
+
+    <button
+        type="reset"
+        form="formPendaftaranPeribadi"
+        class="button button--light">
+        Batal
+    </button>
+
+    <button
+        type="button"
+        class="button"
+        onclick="hantarPermohonanPendaftaran()">
+        Mohon
+    </button>
+
+</div></section><aside class="guide"><div class="guide__title">▣　Panduan Pengguna</div><p>Pastikan maklumat fail diisi dengan lengkap dan tepat sebelum menyimpan pendaftaran. Rujukan fail hendaklah mengikut format yang ditetapkan.</p></aside></div>
+      </section>  
+      
+<!-- MODULE: PEMBUKAAN JILID BAHARU FAIL UMUM -->
+<section class="page" id="page-jilid-baru">
+    <div class="page-heading">
+        <div class="page-heading__left">
+            <div class="page-heading__icon"><i class="bi bi-journal-plus"></i></div>
+            <div>
+                <h1 class="page-heading__title">Pembukaan Jilid Baharu - Fail Umum</h1>
+                <div class="page-heading__subtitle">Cari dan pilih rekod fail umum untuk permohonan jilid baharu</div>
+            </div>
+        </div>
+    </div>
+    <div class="jp-table-card">
+        <div class="jp-table-toolbar">
+            <div class="jp-search"><i class="bi bi-search"></i><input type="search" id="carianFailUmum" placeholder="Cari no. fail, tajuk atau lokasi..."></div>
+            <select id="filterBahagianFailUmum" class="jp-filter"><option value="">Semua Bahagian</option><option value="SPR">SPR</option><option value="BSM">BSM</option></select>
+        </div>
+        <div class="jp-table-wrapper">
+            <table class="jp-table">
+                <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>PERINGKAT</th><th>LOKASI</th><th>JILID</th><th>TINDAKAN</th></tr></thead>
+                <tbody id="senaraiFailUmum"></tbody>
+            </table>
+            <div id="failUmumKosong" class="jp-empty" hidden>Tiada rekod fail dijumpai.</div>
+        </div>
+        <div class="jp-table-footer"><span id="jumlahFailUmum">0 rekod</span><span>Senarai Fail Umum</span></div>
+    </div>
+</section>
+
+<!-- MODULE: PEMBUKAAN JILID BAHARU FAIL PERIBADI -->
+<section class="page" id="page-jilid-barup">
+    <div class="page-heading">
+        <div class="page-heading__left">
+            <div class="page-heading__icon"><i class="bi bi-journal-plus"></i></div>
+            <div>
+                <h1 class="page-heading__title">Pembukaan Jilid Baharu - Fail Peribadi</h1>
+                <div class="page-heading__subtitle">Cari dan pilih rekod fail peribadi untuk permohonan jilid baharu</div>
+            </div>
+        </div>
+    </div>
+    <div class="jp-table-card">
+        <div class="jp-table-toolbar">
+            <div class="jp-search"><i class="bi bi-search"></i><input type="search" id="carianFailPeribadi" placeholder="Cari no. fail, tajuk atau nama pegawai..."></div>
+            <select id="filterBahagianFailPeribadi" class="jp-filter"><option value="">Semua Bahagian</option><option value="BSM">BSM</option><option value="SPR">SPR</option></select>
+        </div>
+        <div class="jp-table-wrapper">
+            <table class="jp-table">
+                <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>NAMA PEGAWAI</th><th>LOKASI</th><th>JILID</th><th>TINDAKAN</th></tr></thead>
+                <tbody id="senaraiFailPeribadi"></tbody>
+            </table>
+            <div id="failPeribadiKosong" class="jp-empty" hidden>Tiada rekod fail dijumpai.</div>
+        </div>
+        <div class="jp-table-footer"><span id="jumlahFailPeribadi">0 rekod</span><span>Senarai Fail Peribadi</span></div>
+    </div>
+</section>
+
+<!-- SHARED MODAL: DIGUNAKAN OLEH FAIL UMUM  -->
+<dialog id="modalJilidUmum" class="jp-modal">
+    <div class="jp-modal__header">
+        <div><h2>Borang Permohonan Pembukaan Jilid Baharu</h2><p id="jpJenisFailUmum">Maklumat fail yang dipilih</p></div>
+        <button type="button" class="jp-modal__close" data-close-jilid aria-label="Tutup">&times;</button>
+    </div>
+    <form id="formJilidUmum">
+        <div class="jp-modal__body">
+            <div class="jp-form-section">
+                <h3>Maklumat Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="jpTajukUmum">Tajuk</label><input id="jpTajukUmum" readonly></div>
+                    <div class="field"><label for="jpNoFailUmum">No. Fail</label><input id="jpNoFailUmum" readonly></div>
+                    <div class="field field--full"><label for="jpDeskripsiUmum">Deskripsi Fail</label><textarea id="jpDeskripsiUmum" rows="2" ></textarea></div>
+                    <div class="field"><label for="jpPeringkatUmum">Peringkat Fail</label><input id="jpPeringkatUmum" readonly></div>
+                    <div class="field"><label for="jpJilidUmum">Jilid Baharu</label><input id="jpJilidUmum" readonly></div>
+                    <div class="field"><label for="jpLokasiUmum">Lokasi</label><input id="jpLokasiUmum" readonly></div>
+                    <div class="field"><label for="jpKeteranganLokasiUmum">Keterangan Lokasi</label><input id="jpKeteranganLokasiUmum" readonly></div>
+                    <div class="field field--full"><label for="jpCatatanUmum">Catatan</label><textarea id="jpCatatanUmum" rows="2" ></textarea></div>
+                   <div class="field field--full">
+    <label for="jpSebabKemaskiniUmum">Sebab Kemaskini</label>
+    <select id="jpSebabKemaskiniUmum" required>
+        <option value="">-- Pilih Sebab Kemaskini --</option>
+        <option value="Jilid Penuh">Telah Melebihi 4cm ketebalan</option>
+        <option value="Penambahan Dokumen">Telah Mencapai 100 Lampiran</option>
+        <option value="Penutupan">Telah Tamat Tindakan</option>
+    </select>
+</div>
+            </div>
+            <div class="jp-form-section">
+                <h3>Maklumat Penutupan Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="jpbilanganlampiranUmum">Bilangan Lampiran*</label><input id="jpbilanganlampiranUmum" required></div>
+                    <div class="field"><label for="jpdatefirstcontentUmum">Tarikh Kandungan Pertama*</label> <input type="date" id="jpdatefirstcontentUmum" required></div>
+                    <div class="field"><label for="jpdatelastcontentUmum">Tarikh Kandungan Terakhir*</label><input type="date" id="jpdatelastcontentUmum" required></div>
+                </div>
+            </div>
+             <div class="jp-form-section">
+                <h3>Maklumat Pemohon</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="jpNamaPemohonUmum">Nama Pegawai / Pemohon</label><input id="jpNamaPemohonUmum" readonly></div>
+                    <div class="field"><label for="jpJawatanPemohonUmum">Jawatan</label><input id="jpJawatanPemohonUmum" readonly></div>
+                    <div class="field"><label for="jpBahagianPemohonUmum">Bahagian / Seksyen</label><input id="jpBahagianPemohonUmum" readonly></div>
+                </div>
+            </div>
+            <input type="hidden" id="jpFailIdUmum">
+            <input type="hidden" id="jpKategoriFailUmum">
+        </div>
+        <div class="jp-modal__footer">
+            <button type="button" class="button button--light" data-close-jilid>Batal</button>
+            <button type="submit" class="button">Hantar Permohonan</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- DIGUNAKAN OLEH FAIL PERIBADI -->
+<dialog id="modalJilidPeribadi" class="jp-modal">
+    <div class="jp-modal__header">
+        <div><h2>Borang Permohonan Pembukaan Jilid Baharu</h2><p id="jpJenisFailPeribadi">Maklumat fail yang dipilih</p></div>
+        <button type="button" class="jp-modal__close" data-close-jilid aria-label="Tutup">&times;</button>
+    </div>
+    <form id="formJilidPeribadi">
+        <div class="jp-modal__body">
+            <div class="jp-form-section">
+                <h3>Maklumat Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="jpTajukPeribadi">Tajuk</label><input id="jpTajukPeribadi" readonly></div>
+                    <div class="field"><label for="jpNoFailPeribadi">No. Fail</label><input id="jpNoFailPeribadi" readonly></div>
+                    <div class="field field--full"><label for="jpDeskripsiPeribadi">Deskripsi Fail</label><textarea id="jpDeskripsiPeribadi" rows="2" ></textarea></div>
+                    <div class="field"><label for="jpPeringkatPeribadi">Peringkat Fail</label><input id="jpPeringkatPeribadi" readonly></div>
+                    <div class="field"><label for="jpJilidPeribadi">Jilid Baharu</label><input id="jpJilidPeribadi" readonly></div>
+                    <div class="field"><label for="jpLokasiPeribadi">Lokasi</label><input id="jpLokasiPeribadi" readonly></div>
+                    <div class="field"><label for="jpKeteranganLokasiPeribadi">Keterangan Lokasi</label><input id="jpKeteranganLokasiPeribadi" readonly></div>
+                    <div class="field field--full"><label for="jpCatatanPeribadi">Catatan</label><textarea id="jpCatatanPeribadi" rows="2" ></textarea></div>
+                   <div class="field field--full">
+    <label for="jpSebabKemaskiniPeribadi">Sebab Kemaskini</label>
+    <select id="jpSebabKemaskiniPeribadi" required>
+        <option value="">-- Pilih Sebab Kemaskini --</option>
+        <option value="Bersara">Bersara</option>
+        <option value="Pindah Keluar">Pindah Keluar</option>
+        <option value="Meninggal Dunia">Meninggal Dunia</option>
+        <option value="Naik Taraf">Naik Taraf</option>
+        <option value="Pengemaskinian Maklumat">Pembukaan Jilid Baru</option>
+    </select>
+</div>
+            </div>
+            <div class="jp-form-section">
+                <h3>Maklumat Penutupan Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="jpbilanganlampiranPeribadi">Bilangan Lampiran*</label><input id="jpbilanganlampiranPeribadi" required></div>
+                    <div class="field"><label for="jpjawatanPeribadi">Jawatan*</label><select id="jpjawatanPeribadi" required><option value="">-- Pilih Jawatan --</option><option value="Pengarah">Pengarah</option><option value="Timbalan Pengarah">Timbalan Pengarah</option><option value="Ketua Penolong Pengarah">Ketua Penolong Pengarah</option><option value="Penolong Pengarah">Penolong Pengarah</option><option value="Pegawai">Pegawai</option><option value="Penolong Pegawai">Penolong Pegawai</option><option value="Pembantu Tadbir">Pembantu Tadbir</option><option value="Lain-lain">Lain-lain</option></select></div>
+                    <div class="field"><label for="jpdatefirstcontentPeribadi">Tarikh Kandungan Pertama*</label> <input type="date" id="jpdatefirstcontentPeribadi" required></div>
+                    <div class="field"><label for="jpdatelastcontentPeribadi">Tarikh Kandungan Terakhir*</label><input type="date" id="jpdatelastcontentPeribadi" required></div>
+                </div>
+            </div>
+             <div class="jp-form-section">
+                <h3>Maklumat Pemohon</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="jpNamaPemohonPeribadi">Nama Pegawai / Pemohon</label><input id="jpNamaPemohonPeribadi" readonly></div>
+                    <div class="field"><label for="jpJawatanPemohonPeribadi">Jawatan</label><input id="jpJawatanPemohonPeribadi" readonly></div>
+                    <div class="field"><label for="jpBahagianPemohonPeribadi">Bahagian / Seksyen</label><input id="jpBahagianPemohonPeribadi" readonly></div>
+                </div>
+            </div>
+            <input type="hidden" id="jpFailIdPeribadi">
+            <input type="hidden" id="jpKategoriFailPeribadi">
+        </div>
+        <div class="jp-modal__footer">
+            <button type="button" class="button button--light" data-close-jilid>Batal</button>
+            <button type="submit" class="button">Hantar Permohonan</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- MODULE: SEJARAH PERMOHONAN -->
+<section class="page" id="page-sejarah"><div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-clock-history"></i></div><div><h1 class="page-heading__title">Sejarah Permohonan</h1><div class="page-heading__subtitle">Semak rekod dan status permohonan yang telah dihantar</div></div></div></div><div class="request-summary"><div class="request-stat"><span>Jumlah Permohonan</span> <strong id="totalRequests">4</strong> <i class="bi bi-file-earmark-text"></i></div><div class="request-stat request-stat--pending"><span>Menunggu Pengesahan</span> <strong id="pendingRequests">1</strong> <i class="bi bi-hourglass-split"></i></div><div class="request-stat request-stat--approved"><span>Diluluskan</span> <strong id="approvedRequests">2</strong> <i class="bi bi-check-circle"></i></div><div class="request-stat request-stat--rejected"><span>Ditolak</span> <strong id="rejectedRequests">1</strong> <i class="bi bi-x-circle"></i></div></div><div class="panel request-panel"><div class="request-panel__header"><div><h3>Rekod Permohonan Saya</h3><p>Senarai semua permohonan yang telah anda hantar.</p></div></div><div class="request-toolbar"><div class="request-search"><i class="bi bi-search"></i> <input type="search" id="requestSearch" placeholder="Cari ID atau nama modul..."></div><select id="requestStatusFilter"><option value="">Semua Status</option><option value="pending">Menunggu Pengesahan</option><option value="approved">Diluluskan</option><option value="rejected">Ditolak</option><option value="progress">Dalam Proses</option><option value="completed">Selesai</option></select></div><div class="table-wrap"><table class="data-table"><thead><tr><th>ID PERMOHONAN</th><th>MODUL</th><th>TARIKH HANTAR</th><th>STATUS</th><th>CATATAN</th><th>TINDAKAN</th></tr></thead><tbody id="requestHistoryBody"></tbody></table></div><div id="requestEmpty" class="request-empty" hidden><i class="bi bi-inbox"></i> <strong>Tiada permohonan ditemui</strong> <span>Tiada rekod yang sepadan dengan carian anda.</span></div></div><div class="request-modal" id="requestDetailModal"><div class="request-modal__backdrop" data-close-request></div><div class="request-modal__content"><div class="request-modal__header"><div><h3>Butiran Permohonan</h3><span id="requestDetailId">EF-001</span></div><button type="button" data-close-request><i class="bi bi-x-lg"></i></button></div><div class="request-modal__body"><div id="requestDetailStatus"></div><h4>Maklumat Permohonan</h4><div class="request-detail-grid"><div><span>Modul</span> <strong id="requestDetailModule">-</strong></div><div><span>Tarikh Hantar</span> <strong id="requestDetailDate">-</strong></div><div><span>Nama Pemohon</span> <strong id="requestDetailApplicant">-</strong></div><div><span>No. Fail / Jilid</span> <strong id="requestDetailFile">-</strong></div><div><span>Disahkan Oleh</span> <strong id="requestDetailApprover">-</strong></div></div><h4>Catatan Pentadbir</h4><div class="request-admin-remarks" id="requestAdminRemarks">Tiada catatan.</div></div><div class="request-modal__footer"><button type="button" class="button button--light" data-close-request>Tutup</button></div></div></div></section>
+
+
+<!-- MODULE: PERMOHONAN PINJAMAN FAIL UMUM -->
+<section class="page" id="page-permohonan">
+    <div class="page-heading">
+        <div class="page-heading__left">
+            <div class="page-heading__icon"><i class="bi bi-file-earmark-plus-fill"></i></div>
+            <div><h1 class="page-heading__title">Permohonan Pinjaman Fail - Fail Umum</h1><div class="page-heading__subtitle">Cari dan pilih jilid fail umum untuk permohonan pinjaman</div></div>
+        </div>
+        <button class="button button--light" data-go="laporan">☷ Senarai Fail</button>
+    </div>
+
+    <!-- SEARCH TABLE -->
+    <div class="jp-table-card">
+        <div class="jp-table-toolbar">
+            <div class="jp-search"><i class="bi bi-search"></i><input type="search" id="carianPinjamanUmum" placeholder="Cari no. fail, tajuk atau lokasi..."></div>
+            <select id="filterBahagianPinjamanUmum" class="jp-filter"><option value="">Semua Bahagian</option><option value="SPR">SPR</option><option value="BSM">BSM</option></select>
+        </div>
+        <div class="jp-table-wrapper">
+            <table class="jp-table">
+                <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>PERINGKAT</th><th>LOKASI</th><th>JILID</th><th>STATUS</th><th>TINDAKAN</th></tr></thead>
+                <tbody id="senaraiPinjamanUmum"></tbody>
+            </table>
+            <div id="pinjamanUmumKosong" class="jp-empty" hidden>Taip untuk mencari rekod</div>
+        </div>
+        <div class="jp-table-footer"><span id="jumlahPinjamanUmum">0 rekod</span><span>Senarai Fail Umum Tersedia</span></div>
+    </div>
+</section>
+
+<!-- POPUP: PERMOHONAN PINJAMAN FAIL UMUM -->
+<dialog id="modalPinjamanUmum" class="jp-modal">
+    <div class="jp-modal__header">
+        <div><h2>Borang Permohonan Pinjaman Fail</h2><p id="pinjamanJenisFailUmum">Maklumat fail yang dipilih</p></div>
+        <button type="button" class="jp-modal__close" data-close-pinjaman aria-label="Tutup">&times;</button>
+    </div>
+    <form id="formPinjaman">
+        <div class="jp-modal__body">
+            <!-- MAKLUMAT FAIL -->
+            <div class="jp-form-section">
+                <h3>Maklumat Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>No. Fail</label><input id="pinjamanNoFail" readonly></div>
+                    <div class="field"><label>Jilid</label><input id="pinjamanJilid" readonly></div>
+                    <div class="field field--full"><label>Tajuk Fail</label><input id="pinjamanTajukUmum" readonly></div>
+                    <div class="field"><label>Peringkat Fail</label><input id="pinjamanPeringkatUmum" readonly></div>
+                    <div class="field"><label>Kategori Fail</label><input id="pinjamanKategoriUmum" readonly></div>
+                    <div class="field"><label>Lokasi Fail</label><input id="pinjamanLokasiUmum" readonly></div>
+                    <div class="field"><label>Status Jilid</label><input id="pinjamanStatusUmum" readonly></div>
+                </div>
+            </div>
+
+            <!-- MAKLUMAT PEMOHON -->
+            <div class="jp-form-section">
+                <h3>Maklumat Pemohon</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>Nama Pegawai / Pemohon</label><input id="pinjamanNamaPemohonUmum" readonly></div>
+                    <div class="field"><label>Jawatan</label><input id="pinjamanJawatanPemohonUmum" readonly></div>
+                    <div class="field field--full"><label>Bahagian / Seksyen</label><input id="pinjamanBahagianPemohonUmum" readonly></div>
+                </div>
+            </div>
+
+            <!-- MAKLUMAT PINJAMAN -->
+            <div class="jp-form-section">
+                <h3>Maklumat Pinjaman</h3>
+                <div class="jp-form-grid">
+                    <div class="field field--full"><label for="pinjamanTujuanUmum">Tujuan Pinjaman *</label><textarea id="pinjamanTujuanUmum" rows="3" required placeholder="Nyatakan tujuan pinjaman fail..."></textarea></div>
+                    <div class="field field--full"><label for="pinjamanCatatanUmum">Catatan</label><textarea id="pinjamanCatatanUmum" rows="2" placeholder="Catatan tambahan (jika ada)"></textarea></div>
+                </div>
+            </div>
+
+            <!-- HIDDEN DATA -->
+            <input type="hidden" id="pinjamanFailIdUmum">
+            <input type="hidden" id="pinjamanKategoriKodUmum">
+        </div>
+        <div class="jp-modal__footer">
+            <button type="button" class="button button--light" data-close-pinjaman>Batal</button>
+            <button type="submit" class="button">Hantar Permohonan</button>
+        </div>
+    </form>
+</dialog>
+
+
+
+<!-- MODULE: PERMOHONAN PINJAMAN FAIL PERIBADI -->
+<section class="page" id="page-permohonanp">
+    <div class="page-heading">
+        <div class="page-heading__left">
+            <div class="page-heading__icon"><i class="bi bi-file-earmark-plus-fill"></i></div>
+            <div><h1 class="page-heading__title">Permohonan Pinjaman Fail - Fail Peribadi</h1><div class="page-heading__subtitle">Cari dan pilih jilid fail peribadi untuk permohonan pinjaman</div></div>
+        </div>
+        <button class="button button--light" data-go="laporan">☷ Senarai Fail</button>
+    </div>
+
+    <!-- SEARCH TABLE -->
+    <div class="jp-table-card">
+        <div class="jp-table-toolbar">
+            <div class="jp-search"><i class="bi bi-search"></i><input type="search" id="carianPinjamanPeribadi" placeholder="Cari no. fail, tajuk atau lokasi..."></div>
+            <select id="filterBahagianPinjamanPeribadi" class="jp-filter"><option value="">Semua Bahagian</option><option value="SPR">SPR</option><option value="BSM">BSM</option></select>
+        </div>
+        <div class="jp-table-wrapper">
+            <table class="jp-table">
+                <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>PERINGKAT</th><th>KETERANGAN FAIL</th><th>JILID</th><th>STATUS</th><th>TINDAKAN</th></tr></thead>
+                <tbody id="senaraiPinjamanPeribadi"></tbody>
+            </table>
+            <div id="pinjamanPeribadiKosong" class="jp-empty" hidden>Taip untuk mencari rekod</div>
+        </div>
+        <div class="jp-table-footer"><span id="jumlahPinjamanPeribadi">0 rekod</span><span>Senarai Fail Peribadi Tersedia</span></div>
+    </div>
+</section>
+
+<!-- POPUP: PERMOHONAN PINJAMAN FAIL PERIBADI -->
+<dialog id="modalPinjamanPeribadi" class="jp-modal">
+    <div class="jp-modal__header">
+        <div><h2>Borang Permohonan Pinjaman Fail</h2><p id="pinjamanJenisFailPeribadi">Maklumat fail yang dipilih</p></div>
+        <button type="button" class="jp-modal__close" data-close-pinjaman-peribadi aria-label="Tutup">&times;</button>
+    </div>
+    <form id="formPinjamanPeribadi">
+        <div class="jp-modal__body">
+            <!-- MAKLUMAT FAIL -->
+            <div class="jp-form-section">
+                <h3>Maklumat Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>No. Fail</label><input id="pinjamanNoFailPeribadi" readonly></div>
+                    <div class="field"><label>Jilid</label><input id="pinjamanJilidPeribadi" readonly></div>
+                    <div class="field field--full"><label>Tajuk Fail</label><input id="pinjamanTajukPeribadi" readonly></div>
+                    <div class="field"><label>Peringkat Fail</label><input id="pinjamanPeringkatPeribadi" readonly></div>
+                    <div class="field"><label>Kategori Fail</label><input id="pinjamanKategoriPeribadi" readonly></div>
+                    <div class="field"><label>Keterangan Fail</label><input id="pinjamanKeteranganPeribadi" readonly></div>
+                    <div class="field"><label>Status Jilid</label><input id="pinjamanStatusPeribadi" readonly></div>
+                </div>
+            </div>
+
+            <!-- MAKLUMAT PEMOHON -->
+            <div class="jp-form-section">
+                <h3>Maklumat Pemohon</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label>Nama Pegawai / Pemohon</label><input id="pinjamanNamaPemohonPeribadi" readonly></div>
+                    <div class="field"><label>Jawatan</label><input id="pinjamanJawatanPemohonPeribadi" readonly></div>
+                    <div class="field field--full"><label>Bahagian / Seksyen</label><input id="pinjamanBahagianPemohonPeribadi" readonly></div>
+                </div>
+            </div>
+
+            <!-- MAKLUMAT PINJAMAN -->
+            <div class="jp-form-section">
+                <h3>Maklumat Pinjaman</h3>
+                <div class="jp-form-grid">
+                    <div class="field field--full"><label for="pinjamanTujuanPeribadi">Tujuan Pinjaman *</label><textarea id="pinjamanTujuanPeribadi" rows="3" required placeholder="Nyatakan tujuan pinjaman fail..."></textarea></div>
+                    <div class="field field--full"><label for="pinjamanCatatanPeribadi">Catatan</label><textarea id="pinjamanCatatanPeribadi" rows="2" placeholder="Catatan tambahan (jika ada)"></textarea></div>
+                </div>
+            </div>
+
+            <!-- HIDDEN DATA -->
+            <input type="hidden" id="pinjamanFailIdPeribadi">
+            <input type="hidden" id="pinjamanKategoriKodPeribadi">
+        </div>
+        <div class="jp-modal__footer">
+            <button type="button" class="button button--light" data-close-pinjaman-peribadi>Batal</button>
+            <button type="submit" class="button">Hantar Permohonan</button>
+        </div>
+    </form>
+</dialog>
+
+
+<!-- MODULE: PERGERAKAN / PEMULANGAN FAIL UMUM -->
+<section class="page" id="page-pergerakan">
+  <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-arrow-left-right"></i></div><div><h1 class="page-heading__title">Pemulangan Fail</h1><div class="page-heading__subtitle">Hantar rekod pemulangan fail yang sedang dipinjam</div></div></div></div>
+  <section class="panel form-panel">
+    <div class="form-panel__title">Borang Pemulangan Fail</div>
+    <div class="form-panel__desc">Pilih fail dan jilid berstatus Dipinjam. Permohonan pemulangan akan direkodkan dalam Sejarah Permohonan untuk semakan Pentadbir.</div>
+    <form id="formPemulanganFail" class="field-grid">
+      <div class="field field--full"><label for="pemulanganFailSelect">Pilih Fail / Jilid *</label><select id="pemulanganFailSelect" required><option value="">-- Pilih fail yang sedang dipinjam --</option></select></div>
+      <div class="field"><label for="pemulanganNoFail">No. Fail</label><input id="pemulanganNoFail" readonly></div>
+      <div class="field"><label for="pemulanganJilid">Jilid</label><input id="pemulanganJilid" readonly></div>
+      <div class="field"><label for="pemulanganPeminjam">Nama Peminjam *</label><input id="pemulanganPeminjam" required></div>
+      <div class="field"><label for="pemulanganTarikh">Tarikh Pemulangan *</label><input id="pemulanganTarikh" type="date" required></div>
+      <div class="field field--full"><label for="pemulanganCatatan">Catatan</label><textarea id="pemulanganCatatan" rows="3" placeholder="Catatan keadaan fail atau maklumat tambahan"></textarea></div>
+      <div class="form-actions"><button type="reset" class="button button--light" id="pemulanganReset">Batal</button><button type="submit" class="button">Hantar Pemulangan</button></div>
+    </form>
+  </section>
+</section>
+
+<!-- MODULE: PERGERAKAN / PEMULANGAN FAIL PERIBADI -->
+<section class="page" id="page-pergerakanp">
+  <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-arrow-left-right"></i></div><div><h1 class="page-heading__title">Pemulangan Fail</h1><div class="page-heading__subtitle">Hantar rekod pemulangan fail yang sedang dipinjam</div></div></div></div>
+  <section class="panel form-panel">
+    <div class="form-panel__title">Borang Pemulangan Fail</div>
+    <div class="form-panel__desc">Pilih fail dan jilid berstatus Dipinjam. Permohonan pemulangan akan direkodkan dalam Sejarah Permohonan untuk semakan Pentadbir.</div>
+    <form id="formPemulanganFailPeribadi" class="field-grid">
+      <div class="field field--full"><label for="pemulanganFailSelectPeribadi">Pilih Fail / Jilid *</label><select id="pemulanganFailSelectPeribadi" required><option value="">-- Pilih fail yang sedang dipinjam --</option></select></div>
+      <div class="field"><label for="pemulanganNoFailPeribadi">No. Fail</label><input id="pemulanganNoFailPeribadi" readonly></div>
+      <div class="field"><label for="pemulanganJilidPeribadi">Jilid</label><input id="pemulanganJilidPeribadi" readonly></div>
+      <div class="field"><label for="pemulanganPeminjamPeribadi">Nama Peminjam *</label><input id="pemulanganPeminjamPeribadi" required></div>
+      <div class="field"><label for="pemulanganTarikhPeribadi">Tarikh Pemulangan *</label><input id="pemulanganTarikhPeribadi" type="date" required></div>
+      <div class="field field--full"><label for="pemulanganCatatanPeribadi">Catatan</label><textarea id="pemulanganCatatanPeribadi" rows="3" placeholder="Catatan keadaan fail atau maklumat tambahan"></textarea></div>
+      <div class="form-actions"><button type="reset" class="button button--light" id="pemulanganResetPeribadi">Batal</button><button type="submit" class="button">Hantar Pemulangan</button></div>
+    </form>
+  </section>
+</section>
+
+
+<!-- MODULE: PELUPUSAN -->
+<section class="page" id="page-pelupusan">
+
+    <div class="page-heading">
+        <div class="page-heading__left">
+            <div class="page-heading__icon">▤</div>
+            <div>
+                <h1 class="page-heading__title">Modul Pelupusan Fail</h1>
+                <div class="page-heading__subtitle">Pengurusan dan pemantauan pelupusan fail</div>
+            </div>
+        </div>
+        <button class="button">＋ Semak Jadual</button>
+    </div>
+
+    <div class="release-summary">
+
+        <section class="panel release-progress">
+            <div class="release-progress__top">
+                <div>
+                    <div class="loan-card__title">Pemantauan Jadual Pelupusan</div>
+                    <div class="release-progress__caption">Jumlah fail untuk tindakan</div>
+                </div>
+                <div class="release-progress__number">0 <span style="font-size:10px;color:var(--muted)">fail/jilid</span></div>
+            </div>
+            <div class="progress"><span></span></div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted)">
+                <span>Dalam proses</span><b>0%</b>
+            </div>
+        </section>
+
+        <aside class="guide">
+            <div class="guide__title">▣　Panduan Pengguna</div>
+            <p>Pengguna boleh menyemak senarai jilid yang telah mencapai tempoh tindakan pelupusan dan mengemaskini status tindakan.</p>
+        </aside>
+
+    </div>
+
+    <section class="panel">
+        <div class="panel__header">
+            <div class="panel__title">▤　Senarai Fail Untuk Tindakan</div>
+            <span class="text-link" id="jumlahRekodPelupusan">0 rekod</span>
+        </div>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>NO. FAIL</th>
+                        <th>JILID / KATEGORI</th>
+                        <th>TAHUN</th>
+                        <th>STATUS</th>
+                        <th>TINDAKAN</th>
+                    </tr>
+                </thead>
+                <tbody id="senaraiPelupusan">
+                    <tr><td colspan="5" class="muted">Memuatkan rekod...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="panel__footer" style="display:flex;justify-content:space-between;align-items:center;padding:14px 18px">
+            <span id="infoPaginationPelupusan" class="muted">Halaman 1</span>
+            <div style="display:flex;gap:8px">
+                <button type="button" class="button button--light" id="pelupusanSebelum">Sebelumnya</button>
+                <button type="button" class="button button--light" id="pelupusanSeterusnya">Seterusnya</button>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+
+
+
+
+<!-- MODULE: PEMINDAHAN FAIL -->
+<section class="page" id="page-pemindahan">
+    <div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-truck"></i></div><div><h1 class="page-heading__title">Pemindahan Fail</h1><div class="page-heading__subtitle">Permohonan pemindahan fail ke lokasi penyimpanan baharu</div></div></div></div>
+
+    <!-- BAHAGIAN CARIAN FAIL -->
+    <section class="panel">
+        <div class="panel__header"><div class="panel__title"><i class="bi bi-search"></i> Carian Fail / Jilid</div></div>
+        <div class="field-grid">
+            <div class="field">
+                <label for="pemindahanKategori">Kategori Fail *</label>
+                <select id="pemindahanKategori">
+                    <option value="">-- Semua Kategori --</option>
+                    <option value="umum">Fail Umum</option>
+                    <option value="peribadi">Fail Peribadi</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="pemindahanCarian">Carian No. Fail / Tajuk Fail</label>
+                <input type="text" id="pemindahanCarian" placeholder="Taip No. Fail atau Tajuk Fail...">
+            </div>
+        </div>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead><tr><th>NO. FAIL</th><th>TAJUK FAIL</th><th>KATEGORI</th><th>JILID</th><th>STATUS</th><th>LOKASI</th><th>TINDAKAN</th></tr></thead>
+                <tbody id="senaraiPemindahan"><tr><td colspan="7" class="text-center">Taip untuk mencari rekod.</td></tr></tbody>
+            </table>
+        </div>
+    </section>
+</section>
+
+<!-- POPUP: BORANG PEMINDAHAN FAIL -->
+<dialog id="modalPemindahanFail" class="jp-modal">
+    <div class="jp-modal__header">
+        <div><h2>Borang Pemindahan Fail</h2><p>Maklumat fail yang dipilih</p></div>
+        <button type="button" class="jp-modal__close" data-close-pemindahan aria-label="Tutup">&times;</button>
+    </div>
+
+    <form id="formPemindahanFail">
+        <div class="jp-modal__body">
+            <!-- MAKLUMAT FAIL -->
+            <div class="jp-form-section">
+                <h3>Maklumat Fail</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="pemindahanNoFail">No. Fail</label><input id="pemindahanNoFail" readonly></div>
+                    <div class="field"><label for="pemindahanJilid">Jilid</label><input id="pemindahanJilid" readonly></div>
+                    <div class="field"><label for="pemindahanStatusRekod">Status Rekod *</label><select id="pemindahanStatusRekod" required><option value="">-- Pilih Status --</option><option value="Aktif">Aktif</option><option value="Tidak Aktif">Tidak Aktif</option></select></div>
+                    <div class="field"><label for="pemindahanLokasiAsal">Lokasi Asal</label><input id="pemindahanLokasiAsal" readonly></div>
+                </div>
+            </div>
+
+            <!-- MAKLUMAT PEMINDAHAN -->
+            <div class="jp-form-section">
+                <h3>Maklumat Pemindahan</h3>
+                <div class="jp-form-grid">
+                    <div class="field"><label for="pemindahanLokasiBaharu">Lokasi Baharu *</label><input id="pemindahanLokasiBaharu" required placeholder="Masukkan lokasi penyimpanan baharu"></div>
+                    <div class="field"><label for="pemindahanTarikhTindakanAkhir">Tarikh Tindakan Akhir *</label><input type="date" id="pemindahanTarikhTindakanAkhir" required></div>
+                    <div class="field field--full"><label for="pemindahanSebab">Sebab Pemindahan *</label><select id="pemindahanSebab" required><option value="">-- Pilih Sebab --</option><option value="Penyusunan Semula">Penyusunan Semula</option><option value="Perubahan Lokasi Penyimpanan">Perubahan Lokasi Penyimpanan</option><option value="Keperluan Operasi">Keperluan Operasi</option><option value="Arahan Pentadbiran">Arahan Pentadbiran</option><option value="Lain-lain">Lain-lain</option></select></div>
+                    <div class="field field--full"><label for="pemindahanCatatan">Catatan</label><textarea id="pemindahanCatatan" rows="3" placeholder="Maklumat tambahan pemindahan"></textarea></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jp-modal__footer">
+            <button type="reset" class="button button--light" id="pemindahanReset">Batal</button>
+            <button type="submit" class="button">Hantar Pemindahan</button>
+        </div>
+    </form>
+</dialog>
+
+
+      
+
+      <!-- MODULE: LAPORAN -->
+<section class="page" id="page-laporan">
+<div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-bar-chart-fill"></i></div><div><h1 class="page-heading__title">Modul Laporan</h1><div class="page-heading__subtitle">Penjanaan laporan berdasarkan rekod sistem</div></div></div></div>
+<section class="panel form-panel" style="margin-bottom:17px"><div class="toolbar">
+<div class="field"><label>Jenis Kategori Laporan</label><select id="laporanJenis">
+<option value="Semua Rekod">Semua Rekod</option><option>Senarai Fail Umum</option><option>Senarai Fail Peribadi</option><option>Semua Jilid</option><option>Jilid Aktif</option><option>Jilid Tidak Aktif</option><option>Jumlah Fail Dipinjam</option><option>Jumlah Fail Tersedia</option><option>Lokasi</option>
+</select></div>
+<div class="field"><label>Bahagian / Seksyen</label><select id="laporanBahagian"><option value="">Semua Bahagian</option><option>SPR</option><option>BSM</option><option>BKP</option><option>BTM</option></select></div>
+<div class="field"><label>Tahun Laporan</label><select id="laporanTahun"><option value="">Semua Tahun</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+<button type="button" class="button" id="laporanJana">⌕　Jana Laporan</button>
+</div></section>
+<div class="report-stats">
+<article class="stat"><div class="stat__icon"><i class="bi bi-clipboard-data-fill"></i></div><div><div class="stat__number" id="laporanJumlah">0</div><div class="stat__label">Jumlah Rekod</div></div></article>
+<article class="stat"><div class="stat__icon">▱</div><div><div class="stat__number" id="laporanAktif">0</div><div class="stat__label">Fail Aktif</div></div></article>
+<article class="stat"><div class="stat__icon stat__icon--orange">▤</div><div><div class="stat__number" id="laporanTidakAktif">0</div><div class="stat__label">Fail Tidak Aktif</div></div></article>
+</div>
+<section class="panel"><div class="panel__header"><div class="panel__title">Hasil Laporan</div><span id="laporanCount">0 rekod ditemui</span></div>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>NO. FAIL / ID</th><th>TAJUK / MODUL</th><th>KATEGORI</th><th>BAHAGIAN</th><th>JILID</th><th>STATUS</th><th>TAHUN</th></tr></thead><tbody id="laporanTableBody"></tbody></table></div></section>
+</section>
+
+<!-- MODULE: TETAPAN SISTEM -->
+<section class="page" id="page-tetapan"><div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon">⚙</div><div><h1 class="page-heading__title">Tetapan</h1><div class="page-heading__subtitle">Tetapan sistem</div></div></div></div>
+    <div class="settings-page">
+
+    <div class="settings-heading">
+        <h3>Tetapan Sistem</h3>
+        <p>Sesuaikan paparan e-FAIL mengikut keselesaan anda.</p>
+    </div>
+
+    <!-- SIDEBAR COLOUR -->
+    <div class="settings-card">
+        <h5><i class="bi bi-palette"></i> Warna Sidebar</h5>
+        <p>Pilih warna sidebar pilihan anda.</p>
+
+        <select id="settingSidebarColor" class="form-select">
+            <option value="#183153">Biru Gelap</option>
+            <option value="#245b45">Hijau</option>
+            <option value="#493b70">Ungu</option>
+            <option value="#424b57">Kelabu</option>
+            <option value="#713f3f">Merah Gelap</option>
+        </select>
+    </div>
+
+    <!-- FONT SIZE -->
+    <div class="settings-card">
+        <h5><i class="bi bi-fonts"></i> Saiz Tulisan</h5>
+        <p>Laraskan saiz tulisan untuk keselesaan membaca.</p>
+
+        <select id="settingFontSize" class="form-select">
+            <option value="14px">Kecil</option>
+            <option value="16px" selected>Normal</option>
+            <option value="18px">Besar</option>
+            <option value="20px">Sangat Besar</option>
+        </select>
+    </div>
+
+    <!-- DISPLAY MODE -->
+    <div class="settings-card">
+        <h5><i class="bi bi-display"></i> Mod Paparan</h5>
+        <p>Pilih paparan cerah atau gelap.</p>
+
+        <select id="settingDisplayMode" class="form-select">
+            <option value="light">Mod Cerah</option>
+            <option value="dark">Mod Gelap</option>
+        </select>
+    </div>
+
+    <!-- HIGH CONTRAST -->
+    <div class="settings-card">
+        <h5><i class="bi bi-eye"></i> Kebolehcapaian</h5>
+        <p>Tingkatkan perbezaan warna tulisan dan latar belakang.</p>
+
+        <div class="form-check form-switch">
+            <input class="form-check-input"
+                   type="checkbox"
+                   id="settingHighContrast">
+
+            <label class="form-check-label"
+                   for="settingHighContrast">
+                Aktifkan Kontras Tinggi
+            </label>
+        </div>
+    </div>
+
+    <!-- RESET -->
+    <div class="settings-actions">
+        <button type="button"
+                class="btn btn-outline-secondary"
+                id="resetSettings">
+            <i class="bi bi-arrow-counterclockwise"></i>
+            Tetapkan Semula
+        </button>
+    </div>
+
+    <small id="settingsMessage" class="text-success"></small>
+
+</div>
+</section>
+      
+     
+      
+<!-- MODULE: PENGESAHAN PERMOHONAN -->
+<section class="page" id="page-pengesahan"><div class="page-heading"><div class="page-heading__left"><div class="page-heading__icon"><i class="bi bi-clipboard2-check"></i></div><div><h1 class="page-heading__title">Pengesahan Permohonan</h1><div class="page-heading__subtitle">Semakan, pengesahan dan rekod tindakan permohonan</div></div></div></div><div class="approval-summary"><div class="approval-stat approval-stat--pending"><div class="approval-stat__icon"><i class="bi bi-hourglass-split"></i></div><div><span>Menunggu Tindakan</span><strong id="approvalPendingCount">3</strong></div></div><div class="approval-stat approval-stat--approved"><div class="approval-stat__icon"><i class="bi bi-check-circle"></i></div><div><span>Disahkan</span><strong id="approvalApprovedCount">1</strong></div></div><div class="approval-stat approval-stat--rejected"><div class="approval-stat__icon"><i class="bi bi-x-circle"></i></div><div><span>Ditolak</span><strong id="approvalRejectedCount">1</strong></div></div></div><section class="panel approval-panel"><div class="approval-tabs" role="tablist" aria-label="Senarai pengesahan"><button type="button" class="approval-tab is-active" data-approval-tab="pending" role="tab" aria-selected="true"><i class="bi bi-inbox"></i> Perlu Tindakan <span class="approval-tab__count" id="pendingTabCount">3</span></button> <button type="button" class="approval-tab" data-approval-tab="history" role="tab" aria-selected="false"><i class="bi bi-clock-history"></i> Sejarah Pengesahan</button></div><div class="approval-toolbar"><div class="approval-search"><i class="bi bi-search"></i> <input type="search" id="approvalSearch" placeholder="Cari ID, nama pemohon atau modul..." aria-label="Cari permohonan"></div><select id="approvalModuleFilter" class="approval-filter" aria-label="Tapis mengikut modul"><option value="">Semua Modul</option><option value="Pinjaman Fail">Pinjaman Fail</option><option value="Pengemaskinian Fail">Pengemaskinian Fail</option><option value="Pembukaan Fail">Pembukaan Fail</option><option value="Pendaftaran Fail">Pendaftaran Fail (rekod lama)</option><option value="Pembukaan Jilid Baharu">Pembukaan Jilid Baharu</option><option value="Pemulangan Fail">Pemulangan Fail</option><option value="Pergerakan Fail">Pergerakan Fail (rekod lama)</option><option value="Penutupan Fail">Penutupan Fail</option><option value="Pelupusan">Pelupusan</option></select></div><div class="table-wrap"><table class="data-table approval-table"><thead><tr><th>ID PERMOHONAN</th><th>MODUL</th><th>PEMOHON</th><th>TARIKH HANTAR</th><th>STATUS</th><th>TINDAKAN</th></tr></thead><tbody id="approvalTableBody"></tbody></table></div><div class="approval-empty" id="approvalEmpty" hidden><i class="bi bi-inbox"></i> <strong>Tiada rekod ditemui</strong> <span>Tiada permohonan yang sepadan dengan carian atau tapisan anda.</span></div><div class="approval-table-footer"><span id="approvalResultCount">Memaparkan 3 rekod</span><span>Data contoh untuk paparan antaramuka</span></div></section><div class="approval-modal" id="approvalDetailModal" aria-hidden="true"><div class="approval-modal__backdrop" data-close-approval></div><section class="approval-detail" role="dialog" aria-modal="true" aria-labelledby="approvalDetailTitle"><div class="approval-detail__header"><div><div class="approval-detail__eyebrow">SEMAKAN PERMOHONAN</div><h2 id="approvalDetailTitle">Butiran Permohonan</h2><span id="detailReference" class="approval-reference">EF-001</span></div><button type="button" class="approval-close" aria-label="Tutup" data-close-approval><i class="bi bi-x-lg"></i></button></div><div class="approval-detail__body"><div class="approval-detail__status" id="detailStatus"></div><div class="approval-detail__section"><h3><i class="bi bi-person-lines-fill"></i> Maklumat Pemohon</h3><div class="approval-detail__grid"><div><span>Nama Pemohon</span><strong id="detailApplicant">-</strong></div><div><span>Modul</span><strong id="detailModule">-</strong></div><div><span>Tarikh Mohon</span><strong id="detailDate">-</strong></div><div><span>Bahagian</span><strong id="detailDepartment">-</strong></div></div></div><div class="approval-detail__section"><h3><i class="bi bi-file-earmark-text"></i> Maklumat Borang</h3><div class="approval-form-preview" id="detailForm"></div>
+<!-- NO. FAIL: PENTADBIR ASSIGNS DURING APPROVAL -->
+<div class="field field--full" id="approvalNoFailSection" hidden>
+    <label for="approvalNoFail">No. Fail Baharu *</label>
+    <input
+        type="text"
+        id="approvalNoFail"
+        placeholder="Masukkan nombor fail rasmi"
+    >
+    <small>Diisi oleh Pentadbir sebelum mengesahkan Pembukaan Fail.</small>
+</div>
+</div><div class="approval-detail__section"><div class="field field--full"><label>Taraf Fail *</label> <select><option>Terbuka</option><option>Terhad</option><option>Sulit</option><option>Rahsia</option><option>Rahsia Besar</option></select></div><div class="field field--full"><label>Kategori Fail *</label> <select><option>Umum</option><option>Peribadi</option></select><div class="approval-document"><i class="bi bi-file-earmark-pdf"></i><div><strong id="detailDocument">Dokumen sokongan.pdf</strong><span>Dokumen contoh · belum disambungkan kepada fail sebenar</span></div><span class="approval-document__type">PDF</span></div></div><div class="approval-detail__section" id="approvalActionSection"><h3><i class="bi bi-pencil-square"></i> Catatan Pentadbir</h3><textarea id="approvalRemarks" rows="3" placeholder="Masukkan catatan. Sebab penolakan wajib diisi..." class="approval-remarks"></textarea> <small class="approval-validation" id="approvalValidation" aria-live="polite"></small></div><div class="approval-history-note" id="approvalHistoryNote" hidden></div></div><div class="approval-detail__footer" id="approvalDetailActions"><button type="button" class="button button--light" data-close-approval>Tutup</button><div class="approval-detail__decision"><button type="button" class="button approval-reject" id="approvalReject"><i class="bi bi-x-circle"></i> Tolak</button> <button type="button" class="button approval-approve" id="approvalApprove"><i class="bi bi-check-circle"></i> Sahkan</button></div></div></div></section></div></section>
+
+<!-- MODULE: LOG KELUAR -->
+<section class="page" id="page-keluar">
+    <div class="page-heading">
+        <div class="page-heading__left">
+            <div class="page-heading__icon">⇥</div>
+            <div>
+                <h1 class="page-heading__title">Log Keluar</h1>
+                <div class="page-heading__subtitle">Sesi pengguna</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel" style="max-width:500px;margin:40px auto;text-align:center;padding:35px;">
+
+        <div style="font-size:45px;margin-bottom:15px;">⇥</div>
+
+        <h2>Log Keluar Sistem?</h2>
+
+        <p style="color:#718096;margin:15px 0 25px;">
+            Adakah anda pasti mahu menamatkan sesi penggunaan e-FAIL 2.0?
+        </p>
+
+        <button class="button button--light"
+                data-go="dashboard">
+            Batal
+        </button>
+
+        <button class="button" id="confirm-logout">
+            Ya, Log Keluar
+        </button>
+
+    </div>
+
+</section>
+    </main>
+    
+
+      <!-- MODAL: AUDIT TRAIL FAIL -->
+      <dialog id="dashboardAuditModal" class="jp-modal">
+        <div class="jp-modal__header">
+          <div>
+            <h2 id="dashboardAuditTitle">Audit Trail Fail</h2>
+            <p id="dashboardAuditSubtitle">Sejarah pergerakan dan pinjaman fail</p>
+          </div>
+          <button type="button" class="jp-modal__close" data-close-audit aria-label="Tutup">&times;</button>
+        </div>
+        <div class="jp-modal__body">
+          <section class="jp-form-section">
+            <h3>Maklumat Fail</h3>
+            <div id="dashboardAuditFileInfo"></div>
+          </section>
+          <section class="jp-form-section">
+            <h3>Sejarah Tindakan</h3>
+            <div class="table-wrap" style="padding:0">
+              <table class="data-table">
+                <thead><tr><th>TARIKH / MASA</th><th>TINDAKAN</th><th>DISEDIAKAN OLEH</th><th>DISAHKAN OLEH</th><th>STATUS</th></tr></thead>
+                <tbody id="dashboardAuditTableBody">
+                  <tr><td colspan="5" class="muted">Tiada rekod audit.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+        <div class="jp-modal__footer">
+          <button type="button" class="button button--secondary" data-close-audit>Tutup</button>
+        </div>
+      </dialog>
+
+      <footer class="footer"><span>© 2026 Jabatan Perdana Menteri. Hak cipta terpelihara.</span><a href="#">ⓘ　Bantuan Pengguna</a></footer>
+  </div>
+</div>
+<!-- JAVASCRIPT: LOAD SHARED HELPERS BEFORE MODULE SCRIPTS -->
+<script src="js/permissions.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/storage-umum.js"></script>
+<script src="js/storage-peribadi.js"></script>
+<script src="js/storage-pengguna.js"></script>
+<script src="js/permohonan-jilid.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/main.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/permohonan-pengemaskinian.js"></script>
+<script src="js/permohonan-pinjaman.js"></script>
+<script src="js/pendaftaran.js"></script>
+<script src="js/sejarah-permohonan.js"></script>
+<script src="js/pergerakan.js"></script>
+<script src="js/pemindahan.js"></script>
+<script src="js/pengesahan.js"></script>
+<script src="js/carian.js"></script>
+<script src="js/pengguna.js"></script>
+<script src="js/laporan.js"></script>
+<script src="js/notifikasi.js"></script>
+<script src="js/pelupusan.js"></script>
+</body>
+</html>
